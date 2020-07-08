@@ -126,5 +126,5 @@ STATIC_URL = '/static/'
 # whitelist port: 3000 from back-end, friend-endd will run in that port
 
 CORS_ORIGIN_WHITELIST = (
-        'localhost:3000/'
+        'https://localhost:3000',
 )
