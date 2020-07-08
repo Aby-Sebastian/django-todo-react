@@ -37,10 +37,13 @@ INSTALLED_APPS = [
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
-    'todo', # registered new app
+    'corsheaders', # added 
+    'rest_framework', # added
+    'todo', # added new app
 ]
 
 MIDDLEWARE = [
+    'corsheaders.middleware.CorsMiddleware', # added cors middleware
     'django.middleware.security.SecurityMiddleware',
     'django.contrib.sessions.middleware.SessionMiddleware',
     'django.middleware.common.CommonMiddleware',
@@ -119,3 +122,9 @@ USE_TZ = True
 # https://docs.djangoproject.com/en/3.0/howto/static-files/
 
 STATIC_URL = '/static/'
+
+# whitelist port: 3000 from back-end, friend-endd will run in that port
+
+CORS_ORIGIN_WHITELIST = (
+        'localhost:3000/'
+)
